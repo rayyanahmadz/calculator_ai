@@ -64,7 +64,7 @@ calculator-ai/
 Clone the repository:
 
 ```bash
-git clone(https://github.com/rayyanahmadz/calculator_ai)
+https://github.com/rayyanahmadz/calculator_ai
 ```
 
 Navigate to the project directory:
