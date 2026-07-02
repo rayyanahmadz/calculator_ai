@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glass Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background glow shapes, purely decorative -->
+  <div class="glow glow--one"></div>
+  <div class="glow glow--two"></div>
+
+  <main class="calculator" id="calculator">
+
+    <div class="copy-toast" id="copyToast">Copied!</div>
+
+    <!-- Title shown above the calculator -->
+    <h1 class="calculator__title">CALCULATOR</h1>
+    <button class="sci-toggle" id="sciToggle">Scientific</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">🌙</button>
+
+    <!-- Display area: shows the previous expression and the current value -->
+    <section class="display" aria-live="polite">
+      <div class="display__history" id="historyDisplay">&nbsp;</div>
+      <div class="display__current" id="currentDisplay" title="Click to copy">0</div>
+    </section>
+
+    <!-- Scientific functions panel — hidden by default -->
+    <section class="sci-panel" id="sciPanel">
+      <button class="key key--sci" data-action="sci" data-value="sin">sin</button>
+      <button class="key key--sci" data-action="sci" data-value="cos">cos</button>
+      <button class="key key--sci" data-action="sci" data-value="tan">tan</button>
+      <button class="key key--sci" data-action="sci" data-value="sqrt">√</button>
+      <button class="key key--sci" data-action="sci" data-value="square">x²</button>
+      <button class="key key--sci" data-action="sci" data-value="log">log</button>
+      <button class="key key--sci" data-action="sci" data-value="ln">ln</button>
+      <button class="key key--sci" data-action="sci" data-value="pi">π</button>
+    </section>
+
+    <!-- Button grid: all calculator controls -->
+    <section class="keypad" id="keypad">
+
+      <!-- Row 1: clear, delete, percent, divide -->
+      <button class="key key--utility" data-action="clear" id="clearBtn">AC</button>
+      <button class="key key--utility" data-action="delete">DEL</button>
+      <button class="key key--utility" data-action="percent">%</button>
+      <button class="key key--operator" data-action="operator" data-value="/">÷</button>
+
+      <!-- Row 2: 7 8 9 multiply -->
+      <button class="key key--digit" data-action="digit" data-value="7">7</button>
+      <button class="key key--digit" data-action="digit" data-value="8">8</button>
+      <button class="key key--digit" data-action="digit" data-value="9">9</button>
+      <button class="key key--operator" data-action="operator" data-value="*">×</button>
+
+      <!-- Row 3: 4 5 6 subtract -->
+      <button class="key key--digit" data-action="digit" data-value="4">4</button>
+      <button class="key key--digit" data-action="digit" data-value="5">5</button>
+      <button class="key key--digit" data-action="digit" data-value="6">6</button>
+      <button class="key key--operator" data-action="operator" data-value="-">−</button>
+
+      <!-- Row 4: 1 2 3 add -->
+      <button class="key key--digit" data-action="digit" data-value="1">1</button>
+      <button class="key key--digit" data-action="digit" data-value="2">2</button>
+      <button class="key key--digit" data-action="digit" data-value="3">3</button>
+      <button class="key key--operator" data-action="operator" data-value="+">+</button>
+
+      <!-- Row 5: sign toggle, 0, decimal point, equals -->
+      <button class="key key--utility" data-action="sign">±</button>
+      <button class="key key--digit" data-action="digit" data-value="0">0</button>
+      <button class="key key--digit" data-action="decimal" data-value=".">.</button>
+      <button class="key key--equals" data-action="equals">=</button>
+
+    </section>
+
+    <!-- Calculation history list -->
+    <section class="history-panel" id="historyPanel">
+      <div class="history-panel__header">
+        <span>History</span>
+        <button class="history-panel__clear" id="clearHistoryBtn">Clear</button>
+      </div>
+      <ul class="history-panel__list" id="historyList"></ul>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
